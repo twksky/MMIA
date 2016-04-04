@@ -1,0 +1,42 @@
+//
+//  MmiaDetailSearchRequestModel.m
+//  MMIA
+//
+//  Created by lixiao on 15/5/27.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaDetailSearchRequestModel.h"
+
+@implementation MmiaDetailSearchRequestModel
+
+- (id)copyWithZone:(NSZone *)zone{
+    MmiaDetailSearchRequestModel* user = [[[self class] alloc] init];
+    user.keyword = [self.keyword mutableCopy];
+    return user;
+}
+
+//- (id)mutableCopyWithZone:(NSZone *)zone{
+//    MmiaDetailSearchRequestModel* user = [[[self class] alloc] init];
+//    user.keyword = [self.keyword mutableCopy];
+//    return user;
+//}
+
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:_keyword forKey:@"keyword"];
+    [aCoder encodeInteger:_start forKey:@"start"];
+    [aCoder encodeInteger:_size forKey:@"size"];
+   
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+       _keyword = [aDecoder decodeObjectForKey:@"keyword"];
+        _start = [aDecoder decodeIntegerForKey:@"start"];
+        _size = [aDecoder decodeIntegerForKey:@"size"];
+    }
+    return self;
+}
+
+@end

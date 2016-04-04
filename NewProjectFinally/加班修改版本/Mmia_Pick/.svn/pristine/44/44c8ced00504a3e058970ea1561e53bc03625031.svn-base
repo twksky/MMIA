@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MmiaBrandIntroduceFooter" id="U6b-Vx-4bR" customClass="BrandFooter">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw5-CZ-kn1" userLabel="lineView">
+                    <rect key="frame" x="10" y="10" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="qhY-P3-1fX"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="vc9-Zd-NoZ" userLabel="addressLabel">
+                    <rect key="frame" x="10" y="21" width="300" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="07M-Pl-QrW" userLabel="shopAddress">
+                    <rect key="frame" x="10" y="41" width="300" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAJ-gd-bJT" userLabel="nextLineView">
+                    <rect key="frame" x="10" y="69" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0i8-ab-Hts" userLabel="phoneLabel">
+                    <rect key="frame" x="10" y="80" width="300" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="4dZ-Bl-hMB" userLabel="phoneNumber">
+                    <rect key="frame" x="10" y="100" width="300" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCB-A6-dzi" userLabel="lastLineView">
+                    <rect key="frame" x="10" y="128" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzY-C9-AfS" userLabel="shareView">
+                    <rect key="frame" x="10" y="139" width="300" height="81"/>
+                    <color key="backgroundColor" red="0.2183058454" green="0.9894838333" blue="0.25618332980000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Vw5-CZ-kn1" firstAttribute="leading" secondItem="vc9-Zd-NoZ" secondAttribute="leading" id="4qB-cN-tid"/>
+                <constraint firstItem="PAJ-gd-bJT" firstAttribute="leading" secondItem="Vw5-CZ-kn1" secondAttribute="leading" id="5iC-Mm-leU"/>
+                <constraint firstItem="vc9-Zd-NoZ" firstAttribute="leading" secondItem="vzY-C9-AfS" secondAttribute="leading" id="65q-vZ-q0o"/>
+                <constraint firstItem="0i8-ab-Hts" firstAttribute="trailing" secondItem="vc9-Zd-NoZ" secondAttribute="trailing" id="8Yg-bv-5xZ"/>
+                <constraint firstItem="Vw5-CZ-kn1" firstAttribute="trailing" secondItem="vc9-Zd-NoZ" secondAttribute="trailing" id="99k-hy-coq"/>
+                <constraint firstItem="07M-Pl-QrW" firstAttribute="leading" secondItem="vc9-Zd-NoZ" secondAttribute="leading" id="9Ak-F0-S91"/>
+                <constraint firstItem="Vw5-CZ-kn1" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="Afn-z3-os8"/>
+                <constraint firstItem="vzY-C9-AfS" firstAttribute="top" secondItem="lCB-A6-dzi" secondAttribute="bottom" constant="10" id="COk-Mg-ccf"/>
+                <constraint firstItem="0i8-ab-Hts" firstAttribute="top" secondItem="PAJ-gd-bJT" secondAttribute="bottom" constant="10" id="Mj9-h3-to8"/>
+                <constraint firstAttribute="bottom" secondItem="vzY-C9-AfS" secondAttribute="bottom" id="Noa-2n-A2U"/>
+                <constraint firstItem="0i8-ab-Hts" firstAttribute="trailing" secondItem="4dZ-Bl-hMB" secondAttribute="trailing" id="QIE-gs-HqA"/>
+                <constraint firstItem="PAJ-gd-bJT" firstAttribute="height" secondItem="Vw5-CZ-kn1" secondAttribute="height" id="SFk-it-ouj"/>
+                <constraint firstItem="lCB-A6-dzi" firstAttribute="trailing" secondItem="PAJ-gd-bJT" secondAttribute="trailing" id="VM9-sO-Zin"/>
+                <constraint firstItem="07M-Pl-QrW" firstAttribute="top" secondItem="vc9-Zd-NoZ" secondAttribute="bottom" constant="8" id="YOP-lc-ef8"/>
+                <constraint firstItem="0i8-ab-Hts" firstAttribute="leading" secondItem="4dZ-Bl-hMB" secondAttribute="leading" id="ZzJ-8B-k7X"/>
+                <constraint firstItem="Vw5-CZ-kn1" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="bfY-jG-q3H"/>
+                <constraint firstItem="lCB-A6-dzi" firstAttribute="top" secondItem="4dZ-Bl-hMB" secondAttribute="bottom" constant="10" id="bvr-7g-GgZ"/>
+                <constraint firstAttribute="trailing" secondItem="Vw5-CZ-kn1" secondAttribute="trailing" constant="10" id="cMc-lj-afs"/>
+                <constraint firstItem="0i8-ab-Hts" firstAttribute="leading" secondItem="vc9-Zd-NoZ" secondAttribute="leading" id="dCF-7g-gBy"/>
+                <constraint firstItem="4dZ-Bl-hMB" firstAttribute="top" secondItem="0i8-ab-Hts" secondAttribute="bottom" constant="8" id="fq0-ed-cXO"/>
+                <constraint firstItem="vc9-Zd-NoZ" firstAttribute="top" secondItem="Vw5-CZ-kn1" secondAttribute="bottom" constant="10" id="qee-7p-Dyq"/>
+                <constraint firstItem="PAJ-gd-bJT" firstAttribute="trailing" secondItem="Vw5-CZ-kn1" secondAttribute="trailing" id="sD6-XD-CMJ"/>
+                <constraint firstItem="vc9-Zd-NoZ" firstAttribute="trailing" secondItem="vzY-C9-AfS" secondAttribute="trailing" id="uqS-nC-ntS"/>
+                <constraint firstItem="PAJ-gd-bJT" firstAttribute="top" secondItem="07M-Pl-QrW" secondAttribute="bottom" constant="10" id="x6g-1f-sGI"/>
+                <constraint firstItem="lCB-A6-dzi" firstAttribute="height" secondItem="PAJ-gd-bJT" secondAttribute="height" id="yHH-GO-AAL"/>
+                <constraint firstItem="lCB-A6-dzi" firstAttribute="leading" secondItem="PAJ-gd-bJT" secondAttribute="leading" id="z2q-ia-9MF"/>
+                <constraint firstItem="07M-Pl-QrW" firstAttribute="trailing" secondItem="vc9-Zd-NoZ" secondAttribute="trailing" id="zZh-js-tXV"/>
+            </constraints>
+            <connections>
+                <outlet property="addressLabel" destination="vc9-Zd-NoZ" id="y6T-Q9-ptF"/>
+                <outlet property="lastLineView" destination="lCB-A6-dzi" id="UQs-up-pf8"/>
+                <outlet property="lineView" destination="Vw5-CZ-kn1" id="H7l-b0-jID"/>
+                <outlet property="nextLineView" destination="PAJ-gd-bJT" id="Ywa-UV-G2w"/>
+                <outlet property="phoneLabel" destination="0i8-ab-Hts" id="8DN-U5-6eY"/>
+                <outlet property="phoneNumber" destination="4dZ-Bl-hMB" id="KdP-Lx-clk"/>
+                <outlet property="shareView" destination="vzY-C9-AfS" id="WO2-Jp-JNG"/>
+                <outlet property="shopAddress" destination="07M-Pl-QrW" id="uds-F4-rit"/>
+            </connections>
+            <point key="canvasLocation" x="227" y="224"/>
+        </collectionReusableView>
+    </objects>
+</document>

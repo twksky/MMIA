@@ -1,0 +1,18 @@
+//
+//  DataController.h
+//  MMIA
+//
+//  Created by twksky on 15/5/29.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+//@class BrandHeader;
+@interface DataController : NSObject
+
++(CGFloat)headHeightWithWeight:(CGFloat)Weight;//品牌详情页头的高度
++(CGFloat)footHeightWithWeight:(CGFloat)Weight;//品牌详情页尾的高度
++(CGFloat)singelHeadHeightWithWeight:(CGFloat)Weight;//单品详情页的头的高度
+
+@end

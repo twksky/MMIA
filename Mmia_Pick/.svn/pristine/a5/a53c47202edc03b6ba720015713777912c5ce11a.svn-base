@@ -1,0 +1,70 @@
+//
+//  MmiaMainViewController.m
+//  Mmia
+//
+//  Created by lixiao on 15/5/12.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaMainViewController.h"
+#import "GlobalNetwork.h"
+#import "MmiaDataModel.h"
+#import "MJExtension.h"
+#import "AdditionHeader.h"
+
+@interface MmiaMainViewController (){
+    MmiaDataModel *_model;
+}
+
+@end
+
+@implementation MmiaMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.navigationController.navigationBar.hidden = YES;
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    /**
+     *以下为手写属性修改方法
+    if (iOS7Later)
+    {
+       self.tableViewTop.constant = self.tableViewTop.constant + 20;
+        [self.tableView needsUpdateConstraints];
+    }
+    */
+    
+    /**
+    * 以下为mesonry用法
+     [imageView mas_makeConstraints:^(MASConstraintMaker *make){
+     make.width.equalTo(@(setImage.size.width + 10));
+     make.height.equalTo(@(setImage.size.height + 10));
+     make.right.equalTo(@(setImage.size.width - 30));
+     make.top.equalTo(@(top));
+     }];
+     */
+    
+    //http://192.0.0.250/ados/love/getProductLike?userid=1697&ticket=b61549cd8b00c2efddac690e8b728686&start=0&size=20
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:1697],@"userid", [NSNumber numberWithInt:0],@"start",[NSNumber numberWithInteger:20],@"size",@"b61549cd8b00c2efddac690e8b728686", @"ticket", nil];
+    
+    [[MMiaNetworkEngine sharedInstance]startPostAsyncRequestWithUrl:@"ados/love/getProductLike" param:infoDict completionHandler:^(AFHTTPRequestOperation *operation, NSDictionary* responseDic)
+    {
+        _model = [MmiaDataModel objectWithKeyValues:responseDic];
+       NSArray *arr = [MMiaDetailModel objectArrayWithKeyValuesArray:_model.data];
+        for (MMiaDetailModel *data in arr)
+        {
+            NSLog(@"%@",data.title);
+        }
+        
+    }errorHandler:^(AFHTTPRequestOperation *operation, NSError* error){
+        
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end

@@ -1,0 +1,21 @@
+//
+//  DetailsCell1_Cell.m
+//  MMIA
+//
+//  Created by twksky on 15/5/27.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "DetailsCell1_Cell.h"
+
+#define CellWidth [UIScreen mainScreen].bounds.size.width
+
+@implementation DetailsCell1_Cell
+
+- (void)awakeFromNib {
+    [_pic sd_setImageWithURL:[NSURL URLWithString:self.ProductPictureListModel.picUrl]];
+    //    CGFloat describeH = [GlobalFunction getTextSizeWithSystemFont:[UIFont systemFontOfSize:10] ConstrainedToSize:CGSizeMake(Main_Screen_Width-20, 1000) string:self.ProductPictureListModel.describe].height;
+    _describe.text = self.ProductPictureListModel.describe;
+}
+
+@end

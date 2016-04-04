@@ -1,0 +1,89 @@
+//
+//  MmiaDetailsViewController.m
+//  MMIA
+//
+//  Created by twksky on 15/5/15.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaDetailsViewController.h"
+#import "MmiaDetailsLayout.h"
+#import "DetailsCell2.h"
+
+@interface MmiaDetailsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic,strong)MmiaDetailsLayout *layout;
+@property (nonatomic,strong)UICollectionView *collectionView;
+@property ( nonatomic , strong ) DetailsCell2 *cell;
+//@property (nonatomic,strong)UICollectionViewFlowLayout *layout;
+@end
+
+@implementation MmiaDetailsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+//    layout
+    _layout = [[MmiaDetailsLayout alloc]init];
+//    collectionView
+    _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:_layout];
+    
+//    注册cell
+    [_collectionView registerNib:[UINib nibWithNibName:@"DetailsCell1" bundle:nil]forCellWithReuseIdentifier:@"cell1"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"DetailsCell2" bundle:nil]forCellWithReuseIdentifier:@"cell2"];
+//    代理
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    [self.view addSubview:_collectionView];
+}
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+// 设置每一组有多少个item
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    
+    return 1;
+}
+
+// 设置一共有多少个分组
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 3;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellName = @"cell2";
+    _cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellName forIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor grayColor];
+    _cell.collectionView2.contentOffset = CGPointMake(0, 0);
+//    NSLog(@"%f,%f",_cell.collectionView2.contentOffset.x,_cell.collectionView2.contentOffset.y);
+    return _cell;
+}
+
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    [_cell reloadInputViews];
+//}
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

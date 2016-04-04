@@ -1,0 +1,38 @@
+//
+//  MmiaModelConfig.m
+//  MMIA
+//
+//  Created by MMIA-Mac on 15-6-4.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import "MmiaModelConfig.h"
+#import "MmiaCategoryModel.h"
+#import "MmiaHomePageModel.h"
+
+@implementation MmiaModelConfig
+
+/**
+ *  这个方法会在MmiaModelConfig加载进内存时调用一次
+ */
++ (void)load
+{
+    // 分类页
+    [MmiaCategoryModel setupObjectClassInArray:^NSDictionary *{
+        return @{
+                 @"categoryList" : @"MmiaCategoryListModel"
+                 };
+    }];
+    
+    // 首页
+    [MmiaHomePageModel setupObjectClassInArray:^NSDictionary *{
+        return @{
+                 @"bannerList" : @"MmiaPaperRecommendModel",
+                 @"selectionList" : @"MmiaPaperRecommendModel",
+                 @"goodRecommendList" : @"MmiaPaperRecommendModel",
+                 @"recommendList" : @"MmiaPaperProductListModel"
+                 };
+    }];
+}
+
+@end

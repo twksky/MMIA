@@ -1,0 +1,40 @@
+//
+//  DetailsCell1_Cell.m
+//  MMIA
+//
+//  Created by twksky on 15/5/27.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "DetailsCell1_Cell.h"
+
+#define CellWidth [UIScreen mainScreen].bounds.size.width
+
+@implementation DetailsCell1_Cell
+
+- (void)awakeFromNib {
+    // Initialization code
+//    [_pic sd_setImageWithURL:[NSURL URLWithString:self.brandModel.picUrl]];
+    //    _describe.text = self.ProductPictureListModel.describe;
+    
+    
+    //描述
+    _describe.font = [UIFont systemFontOfSize:10];
+    _describe.textColor = ColorWithHexRGB(0x666666);
+//    _describe.text = self.productPictureListModel.describe;
+    [_describe setNumberOfLines:0];
+//    CGSize describeSize = [GlobalFunction getTextSizeWithSystemFont:_describe.font ConstrainedToSize:CGSizeMake(Main_Screen_Width-20, 1000) string:self.productPictureListModel.describe];
+//    [_describe setFrame:CGRectMake(10, 1, Main_Screen_Width-20, describeSize.height)];
+    
+}
+
+-(MmiaPaperBrandModel *)brandModel{
+    if (_brandModel == nil) {
+        _brandModel = [[MmiaPaperBrandModel alloc]init];
+    }
+    return _brandModel;
+}
+
+
+
+@end

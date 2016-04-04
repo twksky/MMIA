@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BrandCell" id="gTV-IL-0wX" customClass="CollectionViewPaperCell1">
+            <rect key="frame" x="0.0" y="0.0" width="142" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="142" height="240"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-fg-2PF" userLabel="logoView">
+                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="TE3-iY-d5n"/>
+                            <constraint firstAttribute="width" constant="50" id="XWo-sm-RsN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题文字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="7bN-bS-Kjv" userLabel="titleLabel">
+                        <rect key="frame" x="10" y="65" width="122" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="JH0-lI-8fi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是内容提示文字，可以多行显示描述" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="JCz-5p-DTJ" userLabel="contentLabel">
+                        <rect key="frame" x="10" y="90" width="122" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="jjs-Lw-n4f"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kq-66-lmN" userLabel="cardView">
+                        <rect key="frame" x="10" y="160" width="122" height="70"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="1" green="0.077693015010000005" blue="0.16988687229999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Idg-fg-2PF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="5bf-C7-83h"/>
+                <constraint firstItem="7bN-bS-Kjv" firstAttribute="top" secondItem="Idg-fg-2PF" secondAttribute="bottom" constant="5" id="7QC-wW-g31"/>
+                <constraint firstItem="JCz-5p-DTJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="87r-ZM-YeC"/>
+                <constraint firstItem="7bN-bS-Kjv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Hmp-Ip-g58"/>
+                <constraint firstAttribute="bottom" secondItem="2Kq-66-lmN" secondAttribute="bottom" constant="10" id="NsX-YF-03V"/>
+                <constraint firstItem="2Kq-66-lmN" firstAttribute="top" secondItem="JCz-5p-DTJ" secondAttribute="bottom" constant="10" id="WnN-Tz-Fwa"/>
+                <constraint firstAttribute="trailing" secondItem="JCz-5p-DTJ" secondAttribute="trailing" constant="10" id="X9B-qi-rCH"/>
+                <constraint firstAttribute="trailing" secondItem="7bN-bS-Kjv" secondAttribute="trailing" constant="10" id="i4a-PZ-byk"/>
+                <constraint firstItem="2Kq-66-lmN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="kad-Es-v70"/>
+                <constraint firstAttribute="trailing" secondItem="2Kq-66-lmN" secondAttribute="trailing" constant="10" id="lAL-Re-c95"/>
+                <constraint firstItem="JCz-5p-DTJ" firstAttribute="top" secondItem="7bN-bS-Kjv" secondAttribute="bottom" constant="5" id="tit-S8-nCZ"/>
+                <constraint firstItem="Idg-fg-2PF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="wQE-Jq-4Vr"/>
+            </constraints>
+            <connections>
+                <outlet property="cardView" destination="2Kq-66-lmN" id="yIX-3J-od1"/>
+                <outlet property="contentLabel" destination="JCz-5p-DTJ" id="A06-vU-sNK"/>
+                <outlet property="logoView" destination="Idg-fg-2PF" id="s55-0x-xFy"/>
+                <outlet property="titleLabel" destination="7bN-bS-Kjv" id="5bV-A0-ueV"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

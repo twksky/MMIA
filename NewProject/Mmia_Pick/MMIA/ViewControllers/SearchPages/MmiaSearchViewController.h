@@ -1,0 +1,15 @@
+//
+//  MmiaSearchViewController.h
+//  MMIA
+//
+//  Created by lixiao on 15/5/18.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaBaseViewController.h"
+
+@interface MmiaSearchViewController : MmiaBaseViewController<UITextFieldDelegate>
+
+@property (nonatomic, strong)  UIImage *screenshotImage;
+
+@end

@@ -1,0 +1,13 @@
+//
+//  MmiaModelConfig.h
+//  MMIA
+//
+//  Created by MMIA-Mac on 15-6-4.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface MmiaModelConfig : NSObject
+
+@end

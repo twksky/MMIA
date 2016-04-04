@@ -1,0 +1,27 @@
+//
+//  MmiaDetailsCell2_Layout.m
+//  MMIA
+//
+//  Created by twksky on 15/5/15.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaDetailsCell2_Layout.h"
+
+
+@implementation MmiaDetailsCell2_Layout
+
+-(void)awakeFromNib{
+    self.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-VIEW_OFFSET-kNavigationBarHeight);
+
+    self.sectionInset = UIEdgeInsetsMake(0, 0, 10, 0);
+    
+//    self.minimumInteritemSpacing = 10.0f;
+//    self.minimumLineSpacing = 4.0f;
+    self.scrollDirection = UICollectionViewScrollDirectionVertical;
+
+}
+
+
+
+@end

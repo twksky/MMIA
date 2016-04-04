@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="brandEntrySingleCell" id="gTV-IL-0wX" customClass="BrandEntrySingleCell">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="309"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="311" height="309"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-Zv-Mzz" userLabel="bigImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="241"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="vvj-Y2-EwL" userLabel="titleLabel">
+                        <rect key="frame" x="10" y="251" width="291" height="24"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="HDM-4j-QuF" userLabel="describeLabel">
+                        <rect key="frame" x="10" y="285" width="291" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="tintColor" red="1" green="0.077693015010000005" blue="0.16988687229999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="HDM-4j-QuF" firstAttribute="top" secondItem="vvj-Y2-EwL" secondAttribute="bottom" constant="10" id="04q-RW-CX3"/>
+                <constraint firstAttribute="trailing" secondItem="hE4-Zv-Mzz" secondAttribute="trailing" id="1TH-wb-lR5"/>
+                <constraint firstAttribute="bottom" secondItem="HDM-4j-QuF" secondAttribute="bottom" constant="10" id="Bom-5y-uOT"/>
+                <constraint firstAttribute="trailing" secondItem="HDM-4j-QuF" secondAttribute="trailing" constant="10" id="aiL-DT-Iai"/>
+                <constraint firstItem="hE4-Zv-Mzz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cpI-2d-4jb"/>
+                <constraint firstItem="vvj-Y2-EwL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="khy-Xe-Y8f"/>
+                <constraint firstItem="hE4-Zv-Mzz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="l9T-np-zfq"/>
+                <constraint firstItem="HDM-4j-QuF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="mma-am-VKh"/>
+                <constraint firstItem="vvj-Y2-EwL" firstAttribute="top" secondItem="hE4-Zv-Mzz" secondAttribute="bottom" constant="10" id="oEe-Xx-Auk"/>
+                <constraint firstAttribute="trailing" secondItem="vvj-Y2-EwL" secondAttribute="trailing" constant="10" id="qsN-0t-JCt"/>
+            </constraints>
+            <size key="customSize" width="335" height="278"/>
+            <connections>
+                <outlet property="bigImageView" destination="hE4-Zv-Mzz" id="NmI-Yo-i3r"/>
+                <outlet property="describeLabel" destination="HDM-4j-QuF" id="NTK-qq-kLn"/>
+                <outlet property="titleLabel" destination="vvj-Y2-EwL" id="cdM-tb-pml"/>
+            </connections>
+            <point key="canvasLocation" x="147.5" y="242.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,20 @@
+//
+//  MmiaDetailsCell1_Layout.m
+//  MMIA
+//
+//  Created by twksky on 15/5/27.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaDetailsCell1_Layout.h"
+
+@implementation MmiaDetailsCell1_Layout
+
+-(void)awakeFromNib{
+    self.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-VIEW_OFFSET-kNavigationBarHeight);
+    self.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
+}
+
+
+@end

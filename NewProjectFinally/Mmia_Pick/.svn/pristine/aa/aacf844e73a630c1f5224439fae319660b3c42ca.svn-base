@@ -1,0 +1,152 @@
+//
+//  GlobalConfig.m
+//  MmiaHD
+//
+//  Created by MMIA-Mac on 15-2-3.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import "GlobalConfig.h"
+#import "UtilityMacro.h"
+#import "MmiaPaperViewController.h"
+#import "MmiaBaseViewController.h"
+#import "MmiaBrandDetailsViewController.h"
+#import "MmiaPaperDetailsViewController.h"
+
+#define kNavBarColor ColorWithHexRGB(0x272832)
+#define kNavBarColorTranslucent ColorWithHexRGBA(0x0096d3, 0.7)
+#define kNavBarTitleFont UIFontBoldSystem(18)
+#define kNavBarTitleColor ColorWithRGB(255, 255, 255)
+
+static UIImage* srcNavBackgroundImage;
+static UIImage* srcNavShadowImage;
+static UIImage* navBackgroundImage;
+static UIImage* navBackgroundTranslucentImage;
+
+
+@implementation GlobalConfig
+
++ (UINavigationController *)createNavWithRootVC:(UIViewController *)rootVC
+{
+//    navBackgroundTranslucentImage = [UIImage imageWithColor:kNavBarColorTranslucent size:CGSizeMake(320, 64)];
+//    navBackgroundImage = [UIImage imageWithColor:kNavBarColor size:CGSizeMake(320, 64)];
+    srcNavBackgroundImage = [[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault];
+    srcNavShadowImage = [[UINavigationBar appearance] shadowImage];
+  
+    MmiaNavigationController* nav = [[MmiaNavigationController alloc] initWithRootViewController:rootVC];
+    nav.navigationBarHidden = YES;
+    // 设置navigationbar的半透明
+    [nav.navigationBar setTranslucent:NO];
+    // 设置了BackgroundImage接口后setBarTintColor接口就不能改变statusBar的背景色
+    [nav.navigationBar setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    // 设置navigationbar的颜色
+    [nav.navigationBar setBarTintColor:[UIColor blueColor]];// kNavBarColor
+    // 设置navigationbar上左右按钮字体颜色
+    [nav.navigationBar setTintColor:UIColorWhite];
+    // 设置navigationbar上title字体颜色
+    [nav.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      kNavBarTitleFont, NSFontAttributeName,
+      kNavBarTitleColor, NSForegroundColorAttributeName, nil]];
+    
+    return nav;
+}
+
+@end
+
+
+@implementation MmiaNavigationController
+
+#pragma mark - View life cycle
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [self.topViewController preferredStatusBarStyle];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // 手势滑动返回上一层功能
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.delegate = self;
+        self.delegate = self;
+    }
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+}
+
+#pragma mark - Private function
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return (self.viewControllers.count > 1);
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // 禁用手势滑动返回上一层功能
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController
+                    animated:(BOOL)animate
+{
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.enabled = YES;
+    }
+    
+    if ( [viewController isKindOfClass:[MmiaBrandDetailsViewController class]] )
+    {
+        //品牌页进入的详情页
+        MmiaBrandDetailsViewController* detailVC = (MmiaBrandDetailsViewController *)viewController;
+        detailVC.collectionView.dataSource = detailVC;
+        detailVC.collectionView.delegate = detailVC;
+        [detailVC.view bringSubviewToFront:detailVC.navigationView];
+//        [detailVC.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
+//        [detailVC.collectionView layoutIfNeeded];
+    }else if ([viewController isKindOfClass:[MmiaPaperDetailsViewController class]])
+    {
+        //除品牌页之外的详情页
+        MmiaPaperDetailsViewController *detailVC = (MmiaPaperDetailsViewController *)viewController;
+        detailVC.collectionView.dataSource = detailVC;
+        detailVC.collectionView.delegate = detailVC;
+        [detailVC.view bringSubviewToFront:detailVC.navigationView];
+    }
+    else if ( [viewController isKindOfClass:[MmiaPaperViewController class]] )
+    {
+        MmiaPaperViewController* paperVC = (MmiaPaperViewController *)viewController;
+        paperVC.collectionView.dataSource = paperVC;
+        paperVC.collectionView.delegate = paperVC;
+        [paperVC.view bringSubviewToFront:paperVC.topImageView];
+        [paperVC.view bringSubviewToFront:paperVC.navigationView];
+    }
+}
+
+#pragma mark - UIViewControllerRotation
+
+- (BOOL)shouldAutorotate
+{
+    return self.topViewController.shouldAutorotate;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return self.topViewController.supportedInterfaceOrientations;
+}
+
+@end

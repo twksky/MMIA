@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MmiaCollectionHeader" id="U6b-Vx-4bR" customClass="MmiaProductDetailHeader">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TNh-Mx-Lyb" userLabel="logoImageView">
+                    <rect key="frame" x="10" y="10" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EKz-6x-Dpj"/>
+                        <constraint firstAttribute="width" constant="50" id="tXN-BP-6co"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述文字描述文字描述文字描述文字描述文字描述文字描述文字" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-K8-Qov" userLabel="describeLabel">
+                    <rect key="frame" x="10" y="96" width="300" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL3-hA-hBy" userLabel="titleLabel">
+                    <rect key="frame" x="10" y="70" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lL3-hA-hBy" secondAttribute="trailing" constant="10" id="5rX-vp-PA5"/>
+                <constraint firstItem="bkW-K8-Qov" firstAttribute="top" secondItem="lL3-hA-hBy" secondAttribute="bottom" constant="5" id="6c1-63-esZ"/>
+                <constraint firstItem="TNh-Mx-Lyb" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="7vJ-Hy-xmv"/>
+                <constraint firstItem="bkW-K8-Qov" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="Wxg-45-NBW"/>
+                <constraint firstItem="TNh-Mx-Lyb" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="b9v-BK-H31"/>
+                <constraint firstItem="lL3-hA-hBy" firstAttribute="top" secondItem="TNh-Mx-Lyb" secondAttribute="bottom" constant="10" id="f41-7o-tMJ"/>
+                <constraint firstItem="lL3-hA-hBy" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="hXq-zY-VGY"/>
+                <constraint firstAttribute="trailing" secondItem="bkW-K8-Qov" secondAttribute="trailing" constant="10" id="wuu-vX-ci0"/>
+            </constraints>
+            <connections>
+                <outlet property="describeLabel" destination="bkW-K8-Qov" id="lJH-UY-jem"/>
+                <outlet property="logoImageView" destination="TNh-Mx-Lyb" id="jmZ-rS-mrt"/>
+                <outlet property="titleLabel" destination="lL3-hA-hBy" id="6vn-aE-kde"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="200"/>
+        </collectionReusableView>
+    </objects>
+</document>

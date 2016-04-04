@@ -1,0 +1,60 @@
+//
+//  SingelHeader.m
+//  MMIA
+//
+//  Created by twksky on 15/6/2.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "SingelHeader.h"
+
+#define H1 _brandLogoBtn.frame.size.height
+#define H2 _singelName.frame.size.height
+#define H3 _singelDescription.frame.size.height
+#define SingelHeaderGap 10
+#define BrandLogoBtnWidth 50
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+
+@implementation SingelHeader
+
+- (void)awakeFromNib {
+    // Initialization code
+
+    //品牌logo按钮。可以跳转到平拍列表页
+    _brandLogoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _brandLogoBtn.frame = CGRectMake(SingelHeaderGap, SingelHeaderGap, BrandLogoBtnWidth, BrandLogoBtnWidth);
+    [_brandLogoBtn addTarget:_target action:@selector(pushBrand:) forControlEvents:UIControlEventTouchUpInside];
+    _brandLogoBtn.backgroundColor = [UIColor redColor];
+    [self addSubview:_brandLogoBtn];
+    
+    //单品名字
+    _singelName = [[UILabel alloc]init];
+    _singelName.font = [UIFont systemFontOfSize:15];
+    _singelName.textColor = ColorWithHexRGB(0x999999);
+    _singelName.text = @"福特野马哈哈哈啊好";
+    [_singelName setNumberOfLines:0];
+    CGSize singelNameSize = CGSizeMake(ScreenWidth-SingelHeaderGap-SingelHeaderGap, MAXFLOAT);
+    CGRect singelNameRect = [_singelName.text boundingRectWithSize:singelNameSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_singelName.font} context:nil];
+    [_singelName setFrame:CGRectMake(SingelHeaderGap, SingelHeaderGap+H1+SingelHeaderGap, ScreenWidth-SingelHeaderGap-SingelHeaderGap, singelNameRect.size.height)];
+    [self addSubview:_singelName];
+    
+    
+    //单品描述
+    _singelDescription = [[UILabel alloc]init];
+    _singelDescription.font = [UIFont systemFontOfSize:10];
+    _singelDescription.textColor = ColorWithHexRGB(0x999999);
+    _singelDescription.text = @"【快速消灭打嗝五秘法】 打嗝是一件非常令人尴尬的事，别担心，以后不用再烦恼了，上秘招！1.喝一大口醋（红白皆可），立竿见影。2.深吸一口气，憋住，弯腰90度，缓慢呼气，重复10—15次。3.用干净的勺子把舌头压住，几分钟后打嗝会停。4.快速喝下一大杯温水。5.抱双膝并压迫胸部。转走试试吧";
+    [_singelDescription setNumberOfLines:0];
+    CGSize singelDescriptionSize = CGSizeMake(ScreenWidth-SingelHeaderGap-SingelHeaderGap, MAXFLOAT);
+    CGRect singelDescriptionRect = [_singelDescription.text boundingRectWithSize:singelDescriptionSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_singelDescription.font} context:nil];
+    [_singelDescription setFrame:CGRectMake(SingelHeaderGap, SingelHeaderGap+H1+SingelHeaderGap+H2+5, ScreenWidth-SingelHeaderGap-SingelHeaderGap, singelDescriptionRect.size.height)];
+    [self addSubview:_singelDescription];
+        
+}
+
+-(void)initWithTarget:(id)target{
+    NSLog(@"?");
+    _target = target;
+}
+
+@end

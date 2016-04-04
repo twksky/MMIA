@@ -1,0 +1,17 @@
+//
+//  MmiaDetailsCollectionViewController.h
+//  MMIA
+//
+//  Created by twksky on 15/5/20.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "MmiaBaseViewController.h"
+#import "WebViewController.h"
+#import "MmiaPaperResponseModel.h"
+#import "MmiaProductDetailModel.h"
+
+@interface MmiaDetailsCollectionViewController : MmiaBaseViewController
+@property ( nonatomic , strong ) NSMutableArray *dataArry;
+@end

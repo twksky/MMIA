@@ -1,0 +1,61 @@
+//
+//  BrandHeader.m
+//  MMIA
+//
+//  Created by yhx on 15/5/27.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import "BrandHeader.h"
+
+
+@interface BrandHeader ()
+
+@property (strong, nonatomic) IBOutlet UILabel*  brandDescription;
+@property (strong, nonatomic) IBOutlet UIView*   lineView;
+@property (strong, nonatomic) IBOutlet UILabel*  websiteLabel;
+@property (strong, nonatomic) IBOutlet UILabel*  websiteInfo;
+@property (strong, nonatomic) IBOutlet UIView*   nextLineView;
+@property (strong, nonatomic) IBOutlet UILabel*  titleLabel;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopSpace;
+
+- (IBAction)websiteInfoTapAction:(id)sender;
+
+@end
+
+@implementation BrandHeader
+
+- (void)awakeFromNib
+{
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(websiteInfoTapAction:)];
+    [self.websiteInfo addGestureRecognizer:singleTap];
+}
+
+- (void)reloadBrandHeaderWithModel:(MmiaPaperProductListModel *)model
+{
+    self.brandDescription.text = model.describe;
+    self.websiteInfo.text = model.officalWebsite;
+    self.titleLabel.text = model.title;
+
+    if( model.officalWebsite.length <= 0 )
+    {
+        self.websiteLabel.hidden = YES;
+        self.nextLineView.hidden = YES;
+        
+        [self removeConstraint:self.titleLabelTopSpace];
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.lineView.mas_bottom).offset(KProductDetailPicture_LeftMargin);
+        }];
+        [self.titleLabel layoutIfNeeded];
+    }
+}
+
+- (IBAction)websiteInfoTapAction:(id)sender
+{
+    if( self.TapWebsiteBlock )
+    {
+        self.TapWebsiteBlock();
+    }
+}
+
+@end

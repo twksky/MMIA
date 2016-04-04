@@ -1,0 +1,15 @@
+//
+//  ProductDetailRequestModel.h
+//  MMIA
+//
+//  Created by MMIA-Mac on 15-6-4.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface ProductDetailRequestModel : NSObject
+
+@property (nonatomic, assign) NSInteger spId;
+
+@end

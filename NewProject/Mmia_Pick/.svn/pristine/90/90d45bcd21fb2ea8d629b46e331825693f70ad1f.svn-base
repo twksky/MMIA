@@ -1,0 +1,40 @@
+//
+//  DetailsCell2_Cell.m
+//  MMIA
+//
+//  Created by twksky on 15/5/15.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "DetailsCell2_Cell.h"
+
+/*
+ 品牌详情页cell的布局
+ */
+
+@implementation DetailsCell2_Cell
+
+- (void)awakeFromNib {
+    // Initialization code
+    [_pic sd_setImageWithURL:[NSURL URLWithString:self.productPictureListModel.picUrl]];
+//    _describe.text = self.ProductPictureListModel.describe;
+    
+    
+    //描述
+    _describe.font = [UIFont systemFontOfSize:10];
+    _describe.textColor = ColorWithHexRGB(0x666666);
+    _describe.text = self.productPictureListModel.describe;
+    [_describe setNumberOfLines:0];
+    CGSize describeSize = [GlobalFunction getTextSizeWithSystemFont:_describe.font ConstrainedToSize:CGSizeMake(Main_Screen_Width-20, 1000) string:self.productPictureListModel.describe];
+    [_describe setFrame:CGRectMake(10, 1, Main_Screen_Width-20, describeSize.height)];
+    
+}
+
+-(MmiaProductPictureListModel *)productPictureListModel{
+    if (_productPictureListModel == nil) {
+        _productPictureListModel = [[MmiaProductPictureListModel alloc]init];
+    }
+    return _productPictureListModel;
+}
+
+@end

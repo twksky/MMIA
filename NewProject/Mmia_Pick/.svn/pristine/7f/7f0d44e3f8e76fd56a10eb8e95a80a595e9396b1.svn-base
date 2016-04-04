@@ -1,0 +1,136 @@
+//
+//  MmiaProductDetailViewController.m
+//  MMIA
+//
+//  Created by MMIA-Mac on 15-6-4.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import "MmiaProductDetailViewController.h"
+#import "ProductDetailRequestModel.h"
+#import "NSObject+MJKeyValue.h"
+#import "MmiaProductDetailModel.h"
+#import "MmiaProductDetailHeader.h"
+#import "ProductDetailPictureCell.h"
+
+
+@interface MmiaProductDetailViewController ()
+
+@property (nonatomic, strong) MmiaProductModel* productModel;
+
+- (void)getProductDetailDataForRequest;
+
+@end
+
+@implementation MmiaProductDetailViewController
+
+#pragma mark - init
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+    [self.collectionView registerNib:UINibWithName(@"MmiaProductDetailHeader") forSupplementaryViewOfKind:CollectionElementKindSectionHeader withReuseIdentifier:MainViewHeaderIdentifier];
+    [self.collectionView registerNib:UINibWithName(@"ProductDetailPictureCell") forCellWithReuseIdentifier:ProductDetailPictureCellIdentifier ];
+    
+    [self getProductDetailDataForRequest];
+}
+
+#pragma mark - Private
+
+- (void)getProductDetailDataForRequest
+{
+    ProductDetailRequestModel *requestModel = [[ProductDetailRequestModel alloc] init];
+    requestModel.spId = _spId;
+    NSDictionary *infoDict = [requestModel keyValues];
+    
+    [[MMiaNetworkEngine sharedInstance]startPostAsyncRequestWithUrl:MmiaProductDetailURL param:infoDict completionHandler:^(AFHTTPRequestOperation *operation, NSDictionary* responseDic){
+        
+        if( ![responseDic[@"status"] intValue] )
+        {
+            NSLog( @"pDetail = %@", responseDic );
+            MmiaProductDetailModel* dataModel = [MmiaProductDetailModel objectWithKeyValues:responseDic];
+            self.productModel = [MmiaProductModel objectWithKeyValues:dataModel.product];
+            
+            [self.collectionView reloadData];
+        }
+        else
+        {
+            // 错误处理
+        }
+        
+    }errorHandler:^(AFHTTPRequestOperation *operation, NSError* error){
+        NSLog( @"%@", operation );
+    }];
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.productModel.productPictureList.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    MmiaProductDetailHeader* reusableView;
+    if( [kind isEqual:CollectionElementKindSectionHeader] )
+    {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MainViewHeaderIdentifier forIndexPath:indexPath];
+        [reusableView.logoImageView sd_setImageWithURL:[NSURL URLWithString:self.productModel.brandLogo] placeholderImage:nil];
+    }
+    
+    return reusableView;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProductDetailPictureCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductDetailPictureCellIdentifier forIndexPath:indexPath];
+    
+    MmiaProductPictureListModel* item = self.productModel.productPictureList[indexPath.row];
+    [cell.pictureImageView sd_setImageWithURL:[NSURL URLWithString:item.picUrl] placeholderImage:nil];
+    cell.describeLabel.text = item.describe;
+    
+    return cell;
+}
+
+#pragma mark - CHTCollectionViewDelegateWaterfallLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGSize size = CGSizeMake(self.view.width, 200);
+    
+    return size;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = CGSizeMake(self.view.width, 300);
+    
+    return size;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+@end

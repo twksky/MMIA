@@ -1,0 +1,67 @@
+//
+//  MmiaSearchViewController.m
+//  MMIA
+//
+//  Created by lixiao on 15/5/18.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaSearchViewController.h"
+#import "JTSlideShadowAnimation.h"
+
+@interface MmiaSearchViewController (){
+    UILabel *label;
+    JTSlideShadowAnimation *animationView;
+    
+}
+
+@end
+
+@implementation MmiaSearchViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor redColor];
+    label = [[UILabel alloc]init];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = @"你好你好你好你好";
+    label.textColor = [UIColor whiteColor];
+    [self.view addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(@200);
+        make.left.equalTo(@20);
+        make.right.equalTo(@30);
+        make.height.equalTo(@30);
+    }];
+      animationView = [JTSlideShadowAnimation new];
+      animationView.animatedView = label;
+       animationView.shadowWidth = 20.0;
+
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+   // [super viewWillAppear:animated];
+      NSLog(@"AA%@",NSStringFromCGPoint(label.center));
+      NSLog(@"AA%@", NSStringFromCGRect(label.frame));
+     [animationView start];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

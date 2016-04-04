@@ -1,0 +1,17 @@
+//
+//  MmiaProductDetailHeader.h
+//  MMIA
+//
+//  Created by MMIA-Mac on 15-6-4.
+//  Copyright (c) 2015年 yhx. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface MmiaProductDetailHeader : UICollectionReusableView
+
+@property (strong, nonatomic) IBOutlet UIImageView* logoImageView;
+@property (strong, nonatomic) IBOutlet UILabel*     titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel*     describeLabel;
+
+@end

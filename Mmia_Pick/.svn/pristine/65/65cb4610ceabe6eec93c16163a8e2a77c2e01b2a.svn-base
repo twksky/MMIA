@@ -1,0 +1,108 @@
+//
+//  MmiaBaseViewController.m
+//  MMIA
+//
+//  Created by lixiao on 15/5/18.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaBaseViewController.h"
+
+@interface MmiaBaseViewController ()
+@end
+
+@implementation MmiaBaseViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+     self.navigationController.navigationBarHidden = YES;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
+     [self.navigationController.navigationBar setTranslucent:NO];
+    
+   self.navigationView = [[UIView alloc]init];
+    self.navigationView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+    [self.view addSubview:self.navigationView];
+    
+    self.statusView = [[UIView alloc]init];
+    self.statusView.backgroundColor = [UIColor clearColor];
+    [self.navigationView addSubview:self.statusView];
+    
+    self.naviBarView = [[UIView alloc]init];
+    self.naviBarView.backgroundColor = [UIColor clearColor];
+    [self.navigationView addSubview:self.naviBarView];
+    
+    [self.navigationView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.height.equalTo(@(VIEW_OFFSET + kNavigationBarHeight));
+    }];
+    
+    [self.statusView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.height.equalTo(@(VIEW_OFFSET));
+    }];
+    
+    [self.naviBarView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.top.equalTo(self.statusView.mas_bottom);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.height.equalTo(@(kNavigationBarHeight));
+    }];
+}
+
+- (void)addBackBtnWithTarget:(id)target selector:(SEL)selector
+{
+    UIButton *backButton = [[UIButton alloc]init];
+    backButton.tag = 1001;
+    UIImage *backImage = [UIImage imageNamed:@""];
+    [backButton setImage:backImage forState:UIControlStateNormal];
+    [backButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+     [self.naviBarView addSubview:backButton];
+    
+    [backButton mas_makeConstraints:^(MASConstraintMaker *make){
+        make.left.equalTo(@10);
+        make.top.equalTo(@0);
+        make.size.mas_equalTo(CGSizeMake(50, kNavigationBarHeight));
+    }];
+}
+
+- (void)addRightBtnWithImage:(UIImage *)rightImage Target:(id)target selector:(SEL)selector
+{
+    UIButton *rightButton = [[UIButton alloc]init];
+    rightButton.tag = 1002;
+    [rightButton setImage:rightImage forState:UIControlStateNormal];
+    [rightButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    [self.naviBarView addSubview:rightButton];
+    
+    [rightButton mas_makeConstraints:^(MASConstraintMaker *make){
+        make.right.equalTo(@-10);
+        make.top.equalTo(@0);
+         make.size.mas_equalTo(CGSizeMake(50, kNavigationBarHeight));
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

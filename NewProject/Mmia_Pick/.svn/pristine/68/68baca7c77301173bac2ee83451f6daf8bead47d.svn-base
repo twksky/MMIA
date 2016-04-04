@@ -1,0 +1,43 @@
+//
+//  MmiaBrandCollectionCell.m
+//  MMIA
+//
+//  Created by lixiao on 15/5/22.
+//  Copyright (c) 2015年 lixiao. All rights reserved.
+//
+
+#import "MmiaSingleGoodsCollectionCell.h"
+#import "GlobalFunction.h"
+#import "UtilityMacro.h"
+
+@implementation MmiaSingleGoodsCollectionCell{
+    UIImageView *_downImageView;
+}
+
+- (void)awakeFromNib {
+    // Initialization code
+    _downImageView = [[UIImageView alloc]init];
+    [self.contentView insertSubview:_downImageView belowSubview:_doubleImageView];
+    [_downImageView mas_makeConstraints:^(MASConstraintMaker *make){
+        make.width.equalTo(@123);
+        make.height.equalTo(@123);
+        make.center.mas_equalTo(_doubleImageView);
+    }];
+    _downImageView.layer.shouldRasterize = YES;
+    _downImageView.transform = CGAffineTransformMakeRotation(-7 * M_PI/360);
+    
+    self.titleLabel.textColor = ColorWithHexRGB(0x333333);
+    self.contentLabel.textColor = ColorWithHexRGB(0x999999);
+}
+
+- (void)reloadCell
+{
+    UIImage *image = [UIImage imageNamed:@"content.jpg"];
+    _doubleImageView.image = image;
+    UIImage *image2 = [UIImage imageNamed:@"header.jpeg"];
+    _downImageView.image = image2;
+}
+
+
+
+@end

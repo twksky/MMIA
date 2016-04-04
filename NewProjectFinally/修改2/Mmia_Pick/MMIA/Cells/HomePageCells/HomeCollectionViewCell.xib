@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homePageCell" id="gTV-IL-0wX" customClass="HomeCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="152"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T08-8y-hXD" userLabel="bigImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="101"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="101" id="aNF-kR-Nqh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agz-G0-9LW" userLabel="bigImageViewLabel">
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="文字背景_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mp8-eQ-Yyh" userLabel="titleBackgroundView">
+                        <rect key="frame" x="0.0" y="101" width="150" height="51"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="乐扣" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="J6L-Lg-FEL" userLabel="titleLabel">
+                        <rect key="frame" x="10" y="104" width="130" height="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="J6L-Lg-FEL" firstAttribute="trailing" secondItem="Mp8-eQ-Yyh" secondAttribute="trailing" constant="-10" id="2nw-zn-E7F"/>
+                <constraint firstAttribute="bottom" secondItem="Mp8-eQ-Yyh" secondAttribute="bottom" id="6If-01-qWf"/>
+                <constraint firstItem="Agz-G0-9LW" firstAttribute="leading" secondItem="T08-8y-hXD" secondAttribute="leading" constant="10" id="EAj-nH-uH9"/>
+                <constraint firstItem="T08-8y-hXD" firstAttribute="leading" secondItem="Mp8-eQ-Yyh" secondAttribute="leading" id="I8T-0z-vB0"/>
+                <constraint firstAttribute="trailing" secondItem="T08-8y-hXD" secondAttribute="trailing" id="Pj4-h5-XAX"/>
+                <constraint firstItem="Mp8-eQ-Yyh" firstAttribute="bottom" secondItem="J6L-Lg-FEL" secondAttribute="bottom" priority="250" constant="2" id="T5z-Do-YyY"/>
+                <constraint firstItem="J6L-Lg-FEL" firstAttribute="leading" secondItem="Mp8-eQ-Yyh" secondAttribute="leading" constant="10" id="Tcb-OO-gVZ"/>
+                <constraint firstItem="T08-8y-hXD" firstAttribute="trailing" secondItem="Mp8-eQ-Yyh" secondAttribute="trailing" id="Xrw-mk-20Z"/>
+                <constraint firstItem="J6L-Lg-FEL" firstAttribute="top" secondItem="Mp8-eQ-Yyh" secondAttribute="top" constant="3" id="h3a-sl-lim"/>
+                <constraint firstItem="Agz-G0-9LW" firstAttribute="bottom" secondItem="T08-8y-hXD" secondAttribute="bottom" constant="-4" id="nas-un-BaH"/>
+                <constraint firstItem="T08-8y-hXD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="of9-S6-ebF"/>
+                <constraint firstItem="T08-8y-hXD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yUy-wq-AeH"/>
+                <constraint firstItem="Mp8-eQ-Yyh" firstAttribute="top" secondItem="T08-8y-hXD" secondAttribute="bottom" id="ydg-qG-1za"/>
+            </constraints>
+            <connections>
+                <outlet property="bigImageView" destination="T08-8y-hXD" id="CxK-0C-VEm"/>
+                <outlet property="bigImageViewLabel" destination="Agz-G0-9LW" id="QlV-bZ-woS"/>
+                <outlet property="titleLabel" destination="J6L-Lg-FEL" id="zUt-22-J4h"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="文字背景_icon.png" width="154" height="52"/>
+    </resources>
+</document>

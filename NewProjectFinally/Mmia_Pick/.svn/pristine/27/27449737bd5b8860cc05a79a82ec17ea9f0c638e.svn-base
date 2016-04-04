@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MmiaBrandIntroduceHeader" id="U6b-Vx-4bR" customClass="BrandHeader">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Duo-8A-EPz" userLabel="brandDescription">
+                    <rect key="frame" x="10" y="15" width="300" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaO-ap-PUz" userLabel="lineView">
+                    <rect key="frame" x="10" y="37" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="IHe-l1-qS6"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="官方网站" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Vmk-xu-tXk" userLabel="websiteLabel">
+                    <rect key="frame" x="10" y="48" width="300" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-nH-b53" userLabel="websiteInfo">
+                    <rect key="frame" x="10" y="68" width="300" height="18"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5di-yF-4zC" userLabel="nextLineView">
+                    <rect key="frame" x="10" y="96" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="O3f-rh-Gzw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="XDZ-tL-AEC" userLabel="titleLabel">
+                    <rect key="frame" x="10" y="107" width="300" height="24"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="5di-yF-4zC" firstAttribute="top" secondItem="l8b-nH-b53" secondAttribute="bottom" constant="10" id="1do-mG-B3G"/>
+                <constraint firstItem="XDZ-tL-AEC" firstAttribute="top" secondItem="5di-yF-4zC" secondAttribute="bottom" constant="10" id="3SS-ig-GrH"/>
+                <constraint firstItem="5di-yF-4zC" firstAttribute="leading" secondItem="LaO-ap-PUz" secondAttribute="leading" id="7sJ-Mn-izI"/>
+                <constraint firstItem="Duo-8A-EPz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="15" id="7tj-qx-qjF"/>
+                <constraint firstItem="XDZ-tL-AEC" firstAttribute="leading" secondItem="Duo-8A-EPz" secondAttribute="leading" id="Bn8-RS-foK"/>
+                <constraint firstItem="l8b-nH-b53" firstAttribute="top" secondItem="Vmk-xu-tXk" secondAttribute="bottom" constant="8" id="DfV-T2-fvT"/>
+                <constraint firstItem="5di-yF-4zC" firstAttribute="trailing" secondItem="LaO-ap-PUz" secondAttribute="trailing" id="HNn-Fg-MWg"/>
+                <constraint firstItem="XDZ-tL-AEC" firstAttribute="trailing" secondItem="Duo-8A-EPz" secondAttribute="trailing" id="LT1-f4-Y3t"/>
+                <constraint firstAttribute="trailing" secondItem="Duo-8A-EPz" secondAttribute="trailing" constant="10" id="QrU-Xp-CMc"/>
+                <constraint firstItem="Vmk-xu-tXk" firstAttribute="top" secondItem="LaO-ap-PUz" secondAttribute="bottom" constant="10" id="R7e-ip-Fba"/>
+                <constraint firstItem="Duo-8A-EPz" firstAttribute="leading" secondItem="Vmk-xu-tXk" secondAttribute="leading" id="XgY-yz-s2n"/>
+                <constraint firstItem="Vmk-xu-tXk" firstAttribute="trailing" secondItem="l8b-nH-b53" secondAttribute="trailing" id="YNa-ms-rCS"/>
+                <constraint firstItem="LaO-ap-PUz" firstAttribute="leading" secondItem="Duo-8A-EPz" secondAttribute="leading" id="dgR-lD-AKz"/>
+                <constraint firstItem="LaO-ap-PUz" firstAttribute="top" secondItem="Duo-8A-EPz" secondAttribute="bottom" constant="10" id="iFu-fD-Lm9"/>
+                <constraint firstItem="Duo-8A-EPz" firstAttribute="trailing" secondItem="Vmk-xu-tXk" secondAttribute="trailing" id="nw0-AX-KkO"/>
+                <constraint firstItem="LaO-ap-PUz" firstAttribute="trailing" secondItem="Duo-8A-EPz" secondAttribute="trailing" id="pGh-he-eTo"/>
+                <constraint firstItem="Duo-8A-EPz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="qNm-Ut-oSE"/>
+                <constraint firstItem="Vmk-xu-tXk" firstAttribute="leading" secondItem="l8b-nH-b53" secondAttribute="leading" id="vEO-Rv-e5U"/>
+            </constraints>
+            <connections>
+                <outlet property="brandDescription" destination="Duo-8A-EPz" id="rS2-aS-H6S"/>
+                <outlet property="lineView" destination="LaO-ap-PUz" id="C1M-pX-p29"/>
+                <outlet property="nextLineView" destination="5di-yF-4zC" id="udC-tT-dd0"/>
+                <outlet property="titleLabel" destination="XDZ-tL-AEC" id="tjM-um-Zye"/>
+                <outlet property="titleLabelTopSpace" destination="3SS-ig-GrH" id="WZf-Ze-hOr"/>
+                <outlet property="websiteInfo" destination="l8b-nH-b53" id="x1P-YC-Vfi"/>
+                <outlet property="websiteLabel" destination="Vmk-xu-tXk" id="tkd-S0-iws"/>
+            </connections>
+            <point key="canvasLocation" x="297" y="44.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

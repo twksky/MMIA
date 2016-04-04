@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homePageBigCell" id="gTV-IL-0wX" customClass="HomeCollectionViewBigCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apj-nx-dfc" userLabel="bigImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="155" id="bE6-K6-FPH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9E-6J-bR7" userLabel="bigImageViewLabel">
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyE-4c-W7w" userLabel="titleLabel">
+                        <rect key="frame" x="10" y="130" width="32" height="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="xyE-4c-W7w" firstAttribute="top" secondItem="o9E-6J-bR7" secondAttribute="bottom" constant="4" id="8hu-9d-koR"/>
+                <constraint firstItem="apj-nx-dfc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9ns-9H-j8b"/>
+                <constraint firstAttribute="trailing" secondItem="apj-nx-dfc" secondAttribute="trailing" id="BfA-fv-GoB"/>
+                <constraint firstItem="xyE-4c-W7w" firstAttribute="leading" secondItem="apj-nx-dfc" secondAttribute="leading" constant="10" id="HLZ-4U-rKj"/>
+                <constraint firstItem="apj-nx-dfc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ifa-Kv-aOQ"/>
+                <constraint firstItem="xyE-4c-W7w" firstAttribute="bottom" secondItem="apj-nx-dfc" secondAttribute="bottom" constant="-10" id="ozn-kq-erh"/>
+                <constraint firstItem="xyE-4c-W7w" firstAttribute="leading" secondItem="o9E-6J-bR7" secondAttribute="leading" id="wm7-oQ-kVG"/>
+            </constraints>
+            <connections>
+                <outlet property="bigImageView" destination="apj-nx-dfc" id="65h-UX-aXn"/>
+                <outlet property="bigImageViewLabel" destination="o9E-6J-bR7" id="4sR-4S-YFi"/>
+                <outlet property="titleLabel" destination="xyE-4c-W7w" id="Yfq-eX-Tkx"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
