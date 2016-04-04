@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  POP
+//
+//  Created by twksky on 15/5/7.
+//  Copyright (c) 2015年 twksky. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "POP.h"
+#import "JTSlideShadowAnimation.h"
+#endif
